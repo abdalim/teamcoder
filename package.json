@@ -1,13 +1,14 @@
 {
   "name": "teamcoder",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "Team code generator",
   "engines": {
     "node": ">=4.2.4"
   },
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pretest": "standard | snazzy",
+    "test": "mocha --reporter spec"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,21 @@
   "bugs": {
     "url": "https://github.com/abdalim/teamcoder/issues"
   },
-  "homepage": "https://github.com/abdalim/teamcoder#readme"
+  "homepage": "https://github.com/abdalim/teamcoder#readme",
+  "devDependencies": {
+    "mocha": "^4.0.1",
+    "pre-commit": "^1.2.2",
+    "snazzy": "^7.0.0",
+    "standard": "^10.0.3"
+  },
+  "precommit": [
+    "test"
+  ],
+  "standard": {
+    "globals": [
+      "describe",
+      "context",
+      "it"
+    ]
+  }
 }
