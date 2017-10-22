@@ -16,10 +16,6 @@ describe('teamcoder', function () {
     it('if team name is an object', function () {
       expect(teamcoder({ hello: 'world' })).to.equal('')
     })
-
-    it('if team name is an array', function () {
-      expect(teamcoder([1, 2])).to.equal('')
-    })
   })
 
   context('given a single team name', function () {
@@ -36,7 +32,11 @@ describe('teamcoder', function () {
     it.skip('should pad with human readable chars if team name is shorter than code length')
   })
 
-  context.skip('given a list of team names', function () {
-    it('should return list of team codes without duplicates')
+  context('given a list of team names', function () {
+    it('should return list of team codes', function () {
+      expect(teamcoder(['liverpool', 'arsenal'])).to.deep.equal(['LIV', 'ARS'])
+    })
+
+    it.skip('should return list of team codes without duplicates')
   })
 })
