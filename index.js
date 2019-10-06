@@ -7,8 +7,23 @@ function isBadTeamName (teamName) {
   return !teamName || typeof teamName === 'object'
 }
 
+function isThreeParts (teamName) {
+  return teamName && teamName.split(' ').length === NUM_OF_CHARS
+}
+
+function getAcronym (teamName) {
+  return teamName.split(' ').reduce(function (result, current, index) {
+    return result.concat(current.charAt(0))
+  }, '')
+}
+
 function generateTeamCode (teamName) {
   if (isBadTeamName(teamName)) return ''
+
+  if (isThreeParts(teamName)) {
+    return getAcronym(teamName)
+  }
+
   return teamName.toString().substring(START_INDEX, NUM_OF_CHARS).toUpperCase()
 }
 

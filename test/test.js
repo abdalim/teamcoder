@@ -27,7 +27,7 @@ describe('teamcoder', function () {
       expect(teamcoder('liverpool')).to.equal('LIV')
     })
 
-    it.skip('should return acronym for multiple words team name', function () {
+    it('should return acronym for multiple words team name', function () {
       expect(teamcoder('west ham united')).to.equal('whu')
       expect(teamcoder('zenit st petersburg')).to.equal('zsp')
       expect(teamcoder('red bull salzburg')).to.equal('rbs')
