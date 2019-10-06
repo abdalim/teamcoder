@@ -27,6 +27,13 @@ describe('teamcoder', function () {
       expect(teamcoder('liverpool')).to.equal('LIV')
     })
 
+    it('should return acronym for multiple words team name', function () {
+      expect(teamcoder('west ham united')).to.equal('whu')
+      expect(teamcoder('zenit st petersburg')).to.equal('zsp')
+      expect(teamcoder('red bull salzburg')).to.equal('rbs')
+      expect(teamcoder('paris saint germain')).to.equal('psg')
+    })
+
     it.skip('should not include non alpha numeric characters')
     it.skip('should return human readable team code')
     it.skip('should pad with human readable chars if team name is shorter than code length')
@@ -37,6 +44,16 @@ describe('teamcoder', function () {
       expect(teamcoder(['liverpool', 'arsenal'])).to.deep.equal(['LIV', 'ARS'])
     })
 
-    it.skip('should return list of team codes without duplicates')
+    it.skip('should return list of team codes without duplicates', function () {
+      expect(teamcoder([
+        'liverpool',
+        'manchester united',
+        'manchester city'
+      ])).to.deep.equal([
+        'liv',
+        'mun',
+        'mci'
+      ])
+    })
   })
 })
