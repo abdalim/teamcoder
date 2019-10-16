@@ -59,3 +59,6 @@ typings/
 
 # IDE/Editor files/directories
 .idea
+
+# build files
+dist
