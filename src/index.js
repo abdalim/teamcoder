@@ -24,7 +24,7 @@ function generateTeamCode (teamName) {
     return getAcronym(teamName)
   }
 
-  return teamName.toString().substring(START_INDEX, NUM_OF_CHARS).toUpperCase()
+  return teamName.toString().substring(START_INDEX, NUM_OF_CHARS).toLowerCase()
 }
 
 /**
