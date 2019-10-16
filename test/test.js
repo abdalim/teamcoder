@@ -1,7 +1,7 @@
 'use strict'
 
 var expect = require('chai').expect
-var teamcoder = require('../index')
+var teamcoder = require('../src')
 
 describe('teamcoder', function () {
   context('should return an empty string', function () {
